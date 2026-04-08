@@ -10,17 +10,17 @@ export const pretendard = localFont({
 export const pfStardust = localFont({
   src: [
     {
-      path: "../../public/fonts/PF스타더스트_3_0.ttf",
+      path: "../../public/fonts/PFStardust-Regular.ttf",
       weight: "400",
       style: "normal",
     },
     {
-      path: "../../public/fonts/PF스타더스트_3_0_Bold.ttf",
+      path: "../../public/fonts/PFStardust-Bold.ttf",
       weight: "700",
       style: "normal",
     },
     {
-      path: "../../public/fonts/PF스타더스트_3_0_ExtraBold.ttf",
+      path: "../../public/fonts/PFStardust-ExtraBold.ttf",
       weight: "800",
       style: "normal",
     },
