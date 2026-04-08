@@ -1,12 +1,27 @@
+/* ───── 폰트 패밀리 공통 선언 ───── */
+.text-display,
+.text-heading1,
+.text-heading2,
+.text-body,
+.text-label,
+.text-caption {
+  font-family: var(--font-pretendard), sans-serif;
+}
+
+[data-font="dot"] .text-display,
+[data-font="dot"] .text-heading1,
+[data-font="dot"] .text-heading2,
+[data-font="dot"] .text-body,
+[data-font="dot"] .text-label,
+[data-font="dot"] .text-caption {
+  font-family: var(--font-pf-stardust), sans-serif;
+}
+
 /* ───── display ───── */
 .text-display {
   font-size: 1.5rem;
   line-height: 2rem;
   font-weight: 700;
-  font-family: var(--font-pretendard), sans-serif;
-}
-[data-font="dot"] .text-display {
-  font-family: var(--font-pf-stardust), sans-serif;
 }
 @media (min-width: 768px) {
   .text-display {
@@ -26,10 +41,6 @@
   font-size: 1rem;
   line-height: 1.5rem;
   font-weight: 700;
-  font-family: var(--font-pretendard), sans-serif;
-}
-[data-font="dot"] .text-heading1 {
-  font-family: var(--font-pf-stardust), sans-serif;
 }
 @media (min-width: 768px) {
   .text-heading1 {
@@ -49,10 +60,6 @@
   font-size: 0.875rem;
   line-height: 1.25rem;
   font-weight: 600;
-  font-family: var(--font-pretendard), sans-serif;
-}
-[data-font="dot"] .text-heading2 {
-  font-family: var(--font-pf-stardust), sans-serif;
 }
 @media (min-width: 768px) {
   .text-heading2 {
@@ -72,10 +79,6 @@
   font-size: 0.75rem;
   line-height: 1.125rem;
   font-weight: 400;
-  font-family: var(--font-pretendard), sans-serif;
-}
-[data-font="dot"] .text-body {
-  font-family: var(--font-pf-stardust), sans-serif;
 }
 @media (min-width: 768px) {
   .text-body {
@@ -95,10 +98,6 @@
   font-size: 0.625rem;
   line-height: 1rem;
   font-weight: 500;
-  font-family: var(--font-pretendard), sans-serif;
-}
-[data-font="dot"] .text-label {
-  font-family: var(--font-pf-stardust), sans-serif;
 }
 @media (min-width: 768px) {
   .text-label {
@@ -118,10 +117,6 @@
   font-size: 0.5rem;
   line-height: 0.875rem;
   font-weight: 400;
-  font-family: var(--font-pretendard), sans-serif;
-}
-[data-font="dot"] .text-caption {
-  font-family: var(--font-pf-stardust), sans-serif;
 }
 @media (min-width: 768px) {
   .text-caption {
