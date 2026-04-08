@@ -16,17 +16,19 @@ export const useFontStore = create<FontStore>()(
       toggleFont: () =>
         set((state) => {
           const next = state.fontMode === "main" ? "dot" : "main";
-          document.documentElement.setAttribute(
-            "data-font",
-            next === "dot" ? "dot" : "",
-          );
+          if (next === "dot") {
+            document.documentElement.setAttribute("data-font", "dot");
+          } else {
+            document.documentElement.removeAttribute("data-font");
+          }
           return { fontMode: next };
         }),
       setFont: (mode) => {
-        document.documentElement.setAttribute(
-          "data-font",
-          mode === "dot" ? "dot" : "",
-        );
+        if (mode === "dot") {
+          document.documentElement.setAttribute("data-font", "dot");
+        } else {
+          document.documentElement.removeAttribute("data-font");
+        }
         set({ fontMode: mode });
       },
     }),

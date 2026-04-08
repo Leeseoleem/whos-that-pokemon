@@ -7,10 +7,11 @@ export default function FontInitializer() {
   const fontMode = useFontStore((state) => state.fontMode);
 
   useEffect(() => {
-    document.documentElement.setAttribute(
-      "data-font",
-      fontMode === "dot" ? "dot" : "",
-    );
+    if (fontMode === "dot") {
+      document.documentElement.setAttribute("data-font", "dot");
+    } else {
+      document.documentElement.removeAttribute("data-font");
+    }
   }, [fontMode]);
 
   return null;
