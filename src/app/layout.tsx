@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { pretendard, pfStardust } from "@/styles/fonts";
+import FontInitializer from "@/components/FontInitializer";
 import "@/styles/globals.css";
 
 export const metadata: Metadata = {
@@ -17,6 +18,7 @@ export default function RootLayout({
       lang="ko"
       className={`${pretendard.variable} ${pfStardust.variable} h-full antialiased`}
     >
+      <FontInitializer />
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );
