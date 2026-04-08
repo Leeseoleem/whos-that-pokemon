@@ -6,10 +6,16 @@ import type {
   AbilityResponse,
 } from "@/types/pokemon";
 
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.SUPABASE_SECRET_KEY!,
-);
+const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL;
+const SUPABASE_KEY = process.env.SUPABASE_SECRET_KEY;
+
+if (!SUPABASE_URL || !SUPABASE_KEY) {
+  throw new Error(
+    "NEXT_PUBLIC_SUPABASE_URL 또는 SUPABASE_SECRET_KEY 환경 변수가 설정되지 않았습니다.",
+  );
+}
+
+const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
 
 const delay = (ms: number) => new Promise((res) => setTimeout(res, ms));
 
