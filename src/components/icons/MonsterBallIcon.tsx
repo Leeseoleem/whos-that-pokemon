@@ -6,7 +6,13 @@ export default function MonsterBallIcon({
   color?: string;
 }) {
   return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none">
+    <svg
+      aria-hidden="true"
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+    >
       <circle cx="12" cy="12" r="9" stroke={color} strokeWidth="1.8" />
       <line x1="3" y1="12" x2="21" y2="12" stroke={color} strokeWidth="1.8" />
       <circle
