@@ -60,7 +60,10 @@ async function seedPokemon(id: number): Promise<boolean> {
       species.genera.find((g) => g.language.name === "ko")?.genus ?? null;
 
     const genUrl = species.generation.url;
-    const generation = parseInt(genUrl.split("/").filter(Boolean).pop() ?? "1");
+    const generation = parseInt(
+      genUrl.split("/").filter(Boolean).pop() ?? "1",
+      10,
+    );
 
     const type1_ko =
       TYPE_KO[pokemon.types[0]?.type.name] ?? pokemon.types[0]?.type.name;
