@@ -19,13 +19,26 @@ async function fetchJSON(url: string): Promise<unknown> {
   return res.json();
 }
 
+const abilityNameKoCache = new Map<string, Promise<string>>();
+
 async function getAbilityNameKo(url: string): Promise<string> {
-  const data = (await fetchJSON(url)) as AbilityResponse;
-  const ko = data.names.find((n) => n.language.name === "ko");
-  return ko?.name ?? data.name;
+  const cached = abilityNameKoCache.get(url);
+  if (cached) return cached;
+
+  const request = (async () => {
+    const data = (await fetchJSON(url)) as AbilityResponse;
+    const ko = data.names.find((n) => n.language.name === "ko");
+    return ko?.name ?? data.name;
+  })().catch((error) => {
+    abilityNameKoCache.delete(url);
+    throw error;
+  });
+
+  abilityNameKoCache.set(url, request);
+  return request;
 }
 
-async function seedPokemon(id: number) {
+async function seedPokemon(id: number): Promise<boolean> {
   try {
     const [pokemon, species] = (await Promise.all([
       fetchJSON(`https://pokeapi.co/api/v2/pokemon/${id}`),
@@ -35,7 +48,7 @@ async function seedPokemon(id: number) {
     const name_ko = species.names.find((n) => n.language.name === "ko")?.name;
     if (!name_ko) {
       console.log(`#${id} 한국어 이름 없음 - 스킵`);
-      return;
+      return true;
     }
 
     const flavor_text_ko =
@@ -89,16 +102,25 @@ async function seedPokemon(id: number) {
 
     if (error) throw error;
     console.log(`#${id} ${name_ko} 완료`);
+    return true;
   } catch (e) {
     console.error(`#${id} 실패:`, e);
+    return false;
   }
 }
 
 async function main() {
   console.log("포켓몬 데이터 수집 시작 (1~1025)");
+  let failed = 0;
   for (let id = 1; id <= 1025; id++) {
-    await seedPokemon(id);
+    const ok = await seedPokemon(id);
+    if (!ok) failed += 1;
     await delay(200);
+  }
+  if (failed > 0) {
+    console.error(`완료: ${failed}건 실패`);
+    process.exitCode = 1;
+    return;
   }
   console.log("완료!");
 }
