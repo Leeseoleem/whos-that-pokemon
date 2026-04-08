@@ -18,8 +18,12 @@ export default function RootLayout({
       lang="ko"
       className={`${pretendard.variable} ${pfStardust.variable} h-full antialiased`}
     >
-      <FontInitializer />
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col items-center">
+        <FontInitializer />
+        <div className="w-full max-w-3xl min-h-full flex flex-col flex-1 relative">
+          {children}
+        </div>
+      </body>
     </html>
   );
 }
