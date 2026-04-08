@@ -5,6 +5,11 @@
   --background: #f7f8fa;
   --foreground: #171717;
 
+  /* Panel */
+  --panel-light: #ee5533;
+  --panel-dark: #cc2200;
+  --panel-border: #aa2200;
+
   /* Type */
   --type-normal-main: #9fa19f;
   --type-normal-light: #c1c2c1;
@@ -79,6 +84,12 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  /* Panel */
+  --color-panel-main: var(--status-unsolved-main);
+  --color-panel-light: var(--panel-light);
+  --color-panel-dark: var(--panel-dark);
+  --color-panel-border: var(--panel-border);
 
   /* Type */
   --color-type-normal-main: var(--type-normal-main);
