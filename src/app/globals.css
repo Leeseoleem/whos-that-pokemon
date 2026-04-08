@@ -3,6 +3,74 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  /* Type */
+  --type-normal-main: #9fa19f;
+  --type-normal-light: #c1c2c1;
+  --type-fire-main: #e62829;
+  --type-fire-light: #ef7374;
+  --type-water-main: #2980ef;
+  --type-water-light: #74acf5;
+  --type-grass-main: #3fa129;
+  --type-grass-light: #82c274;
+  --type-electric-main: #fac000;
+  --type-electric-light: #fcd659;
+  --type-ice-main: #3dcef3;
+  --type-ice-light: #81dff7;
+  --type-fighting-main: #81b9ef;
+  --type-fighting-light: #add2f5;
+  --type-poison-main: #9141cb;
+  --type-poison-light: #b884dd;
+  --type-ground-main: #915121;
+  --type-ground-light: #b88e6f;
+  --type-flying-main: #81b9ef;
+  --type-flying-light: #add2f5;
+  --type-psychic-main: #ef4179;
+  --type-psychic-light: #f584a8;
+  --type-bug-main: #91a119;
+  --type-bug-light: #b8c26a;
+  --type-rock-main: #afa981;
+  --type-rock-light: #cbc7ad;
+  --type-ghost-main: #704170;
+  --type-ghost-light: #a284a2;
+  --type-dragon-main: #5060e1;
+  --type-dragon-light: #8d98ec;
+  --type-dark-main: #624d4e;
+  --type-dark-light: #998b8c;
+  --type-steel-main: #60a1b8;
+  --type-steel-light: #98c2d1;
+  --type-fairy-main: #ef70ef;
+  --type-fairy-light: #f5a2f5;
+
+  /* Background */
+  --bg-surface: #ffffff;
+  --bg-background: #f7f8fa;
+  --bg-border-light: #f3f4f6;
+  --bg-border: #e5e7eb;
+
+  /* Text */
+  --text-primary: #111827;
+  --text-sub: #4b5563;
+  --text-muted: #9ca3af;
+
+  /* Status */
+  --status-solved-main: #3fa129;
+  --status-solved-bg: #ecfdf5;
+  --status-expired-main: #f59e0b;
+  --status-expired-bg: #fffbeb;
+  --status-unsolved-main: #e3350d;
+  --status-unsolved-bg: #fef2ef;
+
+  /* Level */
+  --level-1-bg: #fff0ee;
+  --level-2-bg: #eef4ff;
+  --level-3-bg: #fff8e0;
+  --level-4-bg: #f3eeff;
+
+  --level-1-main: #e3350d;
+  --level-2-main: #2475c4;
+  --level-3-main: #e8c000;
+  --level-4-main: #6b2d9f;
 }
 
 @theme inline {
@@ -10,6 +78,74 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  /* Type */
+  --color-type-normal-main: var(--type-normal-main);
+  --color-type-normal-light: var(--type-normal-light);
+  --color-type-fire-main: var(--type-fire-main);
+  --color-type-fire-light: var(--type-fire-light);
+  --color-type-water-main: var(--type-water-main);
+  --color-type-water-light: var(--type-water-light);
+  --color-type-grass-main: var(--type-grass-main);
+  --color-type-grass-light: var(--type-grass-light);
+  --color-type-electric-main: var(--type-electric-main);
+  --color-type-electric-light: var(--type-electric-light);
+  --color-type-ice-main: var(--type-ice-main);
+  --color-type-ice-light: var(--type-ice-light);
+  --color-type-fighting-main: var(--type-fighting-main);
+  --color-type-fighting-light: var(--type-fighting-light);
+  --color-type-poison-main: var(--type-poison-main);
+  --color-type-poison-light: var(--type-poison-light);
+  --color-type-ground-main: var(--type-ground-main);
+  --color-type-ground-light: var(--type-ground-light);
+  --color-type-flying-main: var(--type-flying-main);
+  --color-type-flying-light: var(--type-flying-light);
+  --color-type-psychic-main: var(--type-psychic-main);
+  --color-type-psychic-light: var(--type-psychic-light);
+  --color-type-bug-main: var(--type-bug-main);
+  --color-type-bug-light: var(--type-bug-light);
+  --color-type-rock-main: var(--type-rock-main);
+  --color-type-rock-light: var(--type-rock-light);
+  --color-type-ghost-main: var(--type-ghost-main);
+  --color-type-ghost-light: var(--type-ghost-light);
+  --color-type-dragon-main: var(--type-dragon-main);
+  --color-type-dragon-light: var(--type-dragon-light);
+  --color-type-dark-main: var(--type-dark-main);
+  --color-type-dark-light: var(--type-dark-light);
+  --color-type-steel-main: var(--type-steel-main);
+  --color-type-steel-light: var(--type-steel-light);
+  --color-type-fairy-main: var(--type-fairy-main);
+  --color-type-fairy-light: var(--type-fairy-light);
+
+  /* Background */
+  --color-bg-surface: var(--bg-surface);
+  --color-bg-background: var(--bg-background);
+  --color-bg-border-light: var(--bg-border-light);
+  --color-bg-border: var(--bg-border);
+
+  /* Text */
+  --color-text-primary: var(--text-primary);
+  --color-text-sub: var(--text-sub);
+  --color-text-muted: var(--text-muted);
+
+  /* Status */
+  --color-status-solved-main: var(--status-solved-main);
+  --color-status-solved-bg: var(--status-solved-bg);
+  --color-status-expired-main: var(--status-expired-main);
+  --color-status-expired-bg: var(--status-expired-bg);
+  --color-status-unsolved-main: var(--status-unsolved-main);
+  --color-status-unsolved-bg: var(--status-unsolved-bg);
+
+  /* Level */
+  --color-level-1-bg: var(--level-1-bg);
+  --color-level-2-bg: var(--level-2-bg);
+  --color-level-3-bg: var(--level-3-bg);
+  --color-level-4-bg: var(--level-4-bg);
+
+  --color-level-1-main: var(--level-1-main);
+  --color-level-2-main: var(--level-2-main);
+  --color-level-3-main: var(--level-3-main);
+  --color-level-4-main: var(--level-4-main);
 }
 
 @media (prefers-color-scheme: dark) {
