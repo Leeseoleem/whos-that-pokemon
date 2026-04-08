@@ -170,6 +170,10 @@
 @theme inline {
   --font-pretendard: var(--font-pretendard);
   --font-pf-stardust: var(--font-pf-stardust);
+  --font-sans: var(--font-pretendard);
+  --font-mono:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
 }
 
 body {
