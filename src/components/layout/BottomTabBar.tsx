@@ -33,7 +33,9 @@ export default function BottomTabBar() {
         <TabButton
           key={tab.id}
           tab={tab}
-          isActive={pathname.startsWith(tab.href)}
+          isActive={
+            pathname === tab.href || pathname.startsWith(`${tab.href}/`)
+          }
         />
       ))}
     </nav>
