@@ -18,7 +18,7 @@ export const AskActive: Story = {
   name: "알려줘! 탭 활성",
   parameters: {
     nextjs: {
-      navigation: { pathname: "/" },
+      navigation: { pathname: "/board" },
     },
   },
 };
@@ -38,7 +38,7 @@ export const ProfileActive: Story = {
   name: "내 정보 탭 활성",
   parameters: {
     nextjs: {
-      navigation: { pathname: "/profile" },
+      navigation: { pathname: "/my" },
     },
   },
 };
