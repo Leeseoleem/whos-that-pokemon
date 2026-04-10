@@ -5,7 +5,6 @@ import { pretendard, pfStardust } from "@/styles/fonts";
 
 import FontInitializer from "@/components/FontInitializer";
 import DexHeader from "@/components/layout/DexHeader";
-import BottomTabBar from "@/components/layout/BottomTabBar";
 
 export const metadata: Metadata = {
   title: "오늘의 포켓몬은 뭘까요?",
@@ -27,7 +26,6 @@ export default function RootLayout({
         <div className="w-full max-w-3xl min-h-full flex flex-col flex-1 relative">
           <DexHeader />
           {children}
-          <BottomTabBar />
         </div>
       </body>
     </html>
