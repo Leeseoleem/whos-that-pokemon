@@ -64,4 +64,5 @@ export interface PokemonRow {
   ability1_ko: string | null;
   ability2_ko: string | null;
   ability_hidden_ko: string | null;
+  created_at: string;
 }
