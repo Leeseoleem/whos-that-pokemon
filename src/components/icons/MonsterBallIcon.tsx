@@ -7,6 +7,7 @@ export default function MonsterBallIcon({
 }) {
   return (
     <svg
+      aria-hidden="true"
       width={size}
       height={size}
       viewBox="0 0 100 100"
