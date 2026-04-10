@@ -1,11 +1,16 @@
-import type { Preview } from '@storybook/nextjs-vite'
+import type { Preview } from "@storybook/nextjs-vite";
+import "../src/styles/globals.css";
+import "./preview-fonts.css";
 
 const preview: Preview = {
   parameters: {
+    nextjs: {
+      appDirectory: true,
+    },
     controls: {
       matchers: {
-       color: /(background|color)$/i,
-       date: /Date$/i,
+        color: /(background|color)$/i,
+        date: /Date$/i,
       },
     },
 
@@ -13,8 +18,8 @@ const preview: Preview = {
       // 'todo' - show a11y violations in the test UI only
       // 'error' - fail CI on a11y violations
       // 'off' - skip a11y checks entirely
-      test: 'todo'
-    }
+      test: "todo",
+    },
   },
 };
 
