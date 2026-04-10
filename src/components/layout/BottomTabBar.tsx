@@ -1,7 +1,6 @@
 "use client";
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 import PokedexIcon from "../icons/PokedexIcon";
 import QuestionMarkIcon from "../icons/QuestionMarkIcon";
@@ -15,9 +14,9 @@ interface TabItem {
 }
 
 const TAB_ITEMS: TabItem[] = [
-  { id: "ask", label: "알려줘!", href: "/", icon: PokedexIcon },
-  { id: "who", label: "누구게?", href: "/who", icon: QuestionMarkIcon },
-  { id: "my", label: "내 정보", href: "/profile", icon: MonsterBallIcon },
+  { id: "ask", label: "알려줘!", href: "/board", icon: PokedexIcon },
+  { id: "who", label: "누구게?", href: "/who",   icon: QuestionMarkIcon },
+  { id: "my",  label: "내 정보", href: "/my",    icon: MonsterBallIcon },
 ];
 
 const COLOR_ACTIVE = "#f7f8fa";
@@ -30,7 +29,7 @@ export default function BottomTabBar() {
   return (
     <nav className="w-full h-16 bg-panel-main border-t-4 border-panel-border rounded-b-xl flex items-center justify-around px-4">
       {TAB_ITEMS.map((tab) => (
-        <TabButton key={tab.id} tab={tab} isActive={pathname === tab.href} />
+        <TabButton key={tab.id} tab={tab} isActive={pathname.startsWith(tab.href)} />
       ))}
     </nav>
   );
@@ -42,18 +41,19 @@ interface TabButtonProps {
 }
 
 function TabButton({ tab, isActive }: TabButtonProps) {
+  const router = useRouter();
   const { icon: Icon, label, href } = tab;
   const color = isActive ? COLOR_ACTIVE : COLOR_INACTIVE;
 
   return (
-    <Link
-      href={href}
+    <button
+      onClick={() => router.replace(href)}
       className="flex flex-col items-center gap-0.5 transition-colors duration-150"
     >
       <Icon size={ICON_SIZE} color={color} />
       <span className="text-label leading-none" style={{ color }}>
         {label}
       </span>
-    </Link>
+    </button>
   );
 }
