@@ -59,12 +59,16 @@
   --text-muted: #9ca3af;
 
   /* Status */
-  --status-solved-main: #3fa129;
+  --status-solved-main: #4db87a;
   --status-solved-bg: #ecfdf5;
-  --status-expired-main: #f59e0b;
+  --status-expired-main: #f0ae30;
   --status-expired-bg: #fffbeb;
-  --status-unsolved-main: #e3350d;
+  --status-unsolved-main: #e85e5e;
   --status-unsolved-bg: #fef2ef;
+
+  /* Modal */
+  --button-bg: #8dd93b;
+  --header-bg: #fed874;
 
   /* Level */
   --level-1-bg: #fff0ee;
@@ -137,6 +141,15 @@
   --color-text-sub: var(--text-sub);
   --color-text-muted: var(--text-muted);
 
+  /* Gray (static) */
+  --color-gray-10: #ffffff; /* bg-surface */
+  --color-gray-20: #f7f8fa; /* bg-background */
+  --color-gray-30: #f3f4f6; /* bg-border-light */
+  --color-gray-40: #e5e7eb; /* bg-border */
+  --color-gray-50: #9ca3af; /* text-muted */
+  --color-gray-60: #4b5563; /* text-sub */
+  --color-gray-70: #111827; /* text-primary */
+
   /* Status */
   --color-status-solved-main: var(--status-solved-main);
   --color-status-solved-bg: var(--status-solved-bg);
@@ -144,6 +157,10 @@
   --color-status-expired-bg: var(--status-expired-bg);
   --color-status-unsolved-main: var(--status-unsolved-main);
   --color-status-unsolved-bg: var(--status-unsolved-bg);
+
+  /* Modal */
+  --color-button-bg: var(--button-bg);
+  --color-header-bg: var(--header-bg);
 
   /* Level */
   --color-level-1-bg: var(--level-1-bg);
