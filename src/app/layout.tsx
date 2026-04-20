@@ -4,7 +4,6 @@ import "@/styles/globals.css";
 import { pretendard, pfStardust } from "@/styles/fonts";
 
 import FontInitializer from "@/components/FontInitializer";
-import DexHeader from "@/components/layout/DexHeader";
 
 export const metadata: Metadata = {
   title: "오늘의 포켓몬은 뭘까요?",
@@ -24,7 +23,6 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col items-center">
         <FontInitializer />
         <div className="w-full max-w-3xl min-h-full flex flex-col flex-1 relative">
-          <DexHeader />
           {children}
         </div>
       </body>

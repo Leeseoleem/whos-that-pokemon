@@ -5,7 +5,10 @@ import { motion } from "framer-motion";
 
 export default function DexHeader() {
   return (
-    <header className="w-full bg-panel-main border-b-4 border-panel-border rounded-t-xl p-4 flex items-center justify-between">
+    <header
+      data-font="dot"
+      className="w-full bg-panel-main border-b-4 border-panel-border rounded-t-xl p-4 flex items-center justify-between"
+    >
       {/* 왼쪽 — 렌즈 + 로고 */}
       <div className="flex items-center gap-4">
         {/* 파란 렌즈 */}
@@ -13,10 +16,10 @@ export default function DexHeader() {
           <div className="absolute top-[18%] left-[18%] w-[26%] h-[26%] rounded-full bg-white/60" />
         </div>
         <div className="flex flex-col items-baseline gap-0.5">
-          <p className="text-level-1-bg text-heading2 font-pf-stardust whitespace-nowrap">
+          <p className="text-level-1-bg text-heading2 whitespace-nowrap">
             오늘의 포켓몬은 뭘까요?
           </p>
-          <p className="text-level-1-bg/70 text-label font-pf-stardust whitespace-nowrap">
+          <p className="text-level-1-bg/70 text-label whitespace-nowrap">
             Who&apos;s That Pokémon?
           </p>
         </div>
