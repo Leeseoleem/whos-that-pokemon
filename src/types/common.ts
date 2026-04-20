@@ -16,7 +16,7 @@ export type CommentType = "comment" | "discussion";
 export type NotificationType =
   | "new_answer" // 내 질문에 답변이 달림
   | "answer_accepted" // 내 답변이 채택됨
-  | "question_expired"; // 내 질문이 만료됨 (ask 탭 전용)
+  | "new_comment"; // 내 답변에 댓글이 달림
 
 /** reports.target_type — 신고 대상 종류 */
 export type ReportTargetType = "question" | "answer" | "comment";
