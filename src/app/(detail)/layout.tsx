@@ -1,4 +1,4 @@
-import DexHeader from "@/components/layout/DexHeader";
+import DexHeader from "@/components/layout/header/DexHeader";
 
 export default function DetailLayout({
   children,
