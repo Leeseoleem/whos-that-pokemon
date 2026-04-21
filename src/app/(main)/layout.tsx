@@ -1,3 +1,4 @@
+import DexHeader from "@/components/layout/header/DexHeader";
 import BottomTabBar from "@/components/layout/BottomTabBar";
 
 export default function MainLayout({
@@ -7,6 +8,7 @@ export default function MainLayout({
 }) {
   return (
     <>
+      <DexHeader />
       <main className="flex-1 flex flex-col overflow-hidden">{children}</main>
       <BottomTabBar />
     </>

@@ -55,13 +55,13 @@ export interface PokemonRow {
   type1_ko: string;
   type2_ko: string | null;
   generation: number;
-  image_url: string | null;
+  image_url: string;
   height_m: number;
   weight_kg: number;
-  flavor_text_ko: string | null;
-  category_ko: string | null;
+  flavor_text_ko: string;
+  category_ko: string;
   gender_rate: number;
-  ability1_ko: string | null;
+  ability1_ko: string;
   ability2_ko: string | null;
   ability_hidden_ko: string | null;
   created_at: string;

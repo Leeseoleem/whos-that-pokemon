@@ -15,7 +15,7 @@ interface TabItem {
 }
 
 const TAB_ITEMS: TabItem[] = [
-  { id: "ask", label: "알려줘!", href: "/board", icon: PokedexIcon },
+  { id: "ask", label: "알려줘!", href: "/ask", icon: PokedexIcon },
   { id: "who", label: "누구게?", href: "/who", icon: QuestionMarkIcon },
   { id: "my", label: "내 정보", href: "/my", icon: MonsterBallIcon },
 ];
