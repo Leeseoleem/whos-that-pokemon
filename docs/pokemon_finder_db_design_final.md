@@ -442,7 +442,6 @@ DB 저장: { parent_id: "abc123", answer_id: "부모의 answer_id", content: "..
 | `new_answer`      | 내 질문에 답변이 달릴 때 | 답변 등록 트리거 |
 | `answer_accepted` | 내 답변이 채택될 때      | 채택 트리거      |
 | `new_comment `    | 내 답변에 댓글이 달릴 때 | 댓글 등록 트리거 |
-| `new_comment`     | 댓글이 달릴 때           | 추후 구현 예정   |
 
 - 질문 또는 답변 삭제 시 CASCADE로 함께 삭제
 - 유저 탈퇴 시 CASCADE 삭제
