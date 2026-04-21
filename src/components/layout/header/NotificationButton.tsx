@@ -1,5 +1,6 @@
 import { Bell } from "lucide-react";
 import clsx from "clsx";
+import { NOTIFICATION_PANEL_ID } from "@/constants/header";
 
 export interface NotificationButtonProps {
   onClick?: () => void;
@@ -16,7 +17,8 @@ export default function NotificationButton({
     <button
       onClick={onClick}
       type="button"
-      aria-pressed={isActive}
+      aria-expanded={isActive}
+      aria-controls={NOTIFICATION_PANEL_ID}
       className={clsx(
         "relative flex rounded-full p-2 transition-colors duration-200 ease-in-out",
         isActive ? "bg-gray-10/30" : "hover:bg-gray-10/20 active:bg-gray-10/30",
