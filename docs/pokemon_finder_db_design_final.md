@@ -684,6 +684,12 @@ is_blinded = true   →  "운영 정책에 의해 숨겨진 게시물입니다" 
   └─→ questions.comments_count 자동 +1                        [트리거]
   └─→ questions.last_activity_at 자동 갱신                    [트리거]
   └─→ profiles.last_comment_at 자동 갱신                      [트리거]
+  └─→ answers 작성자에게 new_comment 알림 발송                [트리거, 소셜 유저만, discussion 제외]  ← 여기로 이동
+
+매일 새벽 3시 KST (자동 실행)
+  └─→ ask 탭 · unsolved · last_activity_at 30일 초과 → expired 전환    [cron]
+  └─→ ask 탭 · unsolved · created_at 90일 초과 → expired 전환          [cron]
+  └─→ withdrawal_logs에서 withdrawn_at 7일 초과 레코드 삭제             [cron]
 
 유저가 대댓글을 작성
   └─→ Route Handler에서 parent_id로 부모 댓글 조회
@@ -719,13 +725,6 @@ is_blinded = true   →  "운영 정책에 의해 숨겨진 게시물입니다" 
               └─→ questions / answers / comments.author_id → NULL   [FK SET NULL 자동]
               └─→ question_likes / notifications → 삭제             [FK CASCADE 자동]
               └─→ reports.reporter_id → NULL                        [FK SET NULL 자동]
-
-매일 새벽 3시 KST (자동 실행)
-  └─→ ask 탭 · unsolved · last_activity_at 30일 초과 → expired 전환    [cron]
-  └─→ ask 탭 · unsolved · created_at 90일 초과 → expired 전환          [cron]
-  └─→ 유저가 댓글을 작성
-      └─→ answers 작성자에게 new_comment 알림 발송  [트리거, 소셜 유저만, discussion 제외]
-  └─→ withdrawal_logs에서 withdrawn_at 7일 초과 레코드 삭제             [cron]
 
 매주 일요일 새벽 4시 KST (자동 실행)
   └─→ answers_count / comments_count / likes_count 실제 값과 비교       [cron]
