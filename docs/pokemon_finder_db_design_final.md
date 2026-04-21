@@ -108,7 +108,6 @@
 - 수정 불가 컬럼: `is_admin`, `is_anonymous`, `accepted_count`, `last_*_at`
 
 > ⚠️ UPDATE 정책에 `WITH CHECK` 조건이 적용되어 있습니다. `is_admin`, `is_anonymous`, `accepted_count`는 클라이언트를 통해 절대 변경할 수 없습니다. 관리자 지정은 반드시 Supabase 대시보드 또는 SQL Editor(service_role 권한)에서만 가능합니다.
-
 > ⚠️ `badge_id` 역시 RLS `WITH CHECK`로 레벨 조건을 검증합니다. 현재 `accepted_count`에서 계산된 레벨 이하의 뱃지만 장착할 수 있습니다.
 
 **뱃지 레벨 검증 조건**
