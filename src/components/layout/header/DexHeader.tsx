@@ -1,5 +1,6 @@
 import { createClient } from "@/lib/supabase/server";
 import DexHeaderClient from "./DexHeaderClient";
+import type { Notification } from "@/types";
 
 export default async function DexHeader() {
   const supabase = await createClient();
@@ -14,11 +15,11 @@ export default async function DexHeader() {
         .from("notifications")
         .select("*")
         .order("created_at", { ascending: false })
-    : { data: [] };
+    : { data: [] as Notification[] };
 
   const unreadCount = notifications?.filter((n) => !n.is_read).length ?? 0;
 
   return (
-    <DexHeaderClient isLoggedIn={isSocialUser} unreadCount={unreadCount} />
+    <DexHeaderClient isSocialUser={isSocialUser} unreadCount={unreadCount} />
   );
 }
